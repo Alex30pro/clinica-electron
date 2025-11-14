@@ -1,0 +1,30 @@
+{
+  "name": "clinica-electron",
+  "version": "1.0.0",
+  "description": "Sistema de Gerenciamento de Clínica",
+  "main": "main.js",
+  "author": "Alex Araujo",
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-builder"
+  },
+  "devDependencies": {
+    "electron": "^30.3.0",
+    "electron-builder": "^24.13.3"
+  },
+  "dependencies": {
+    "sqlite3": "^5.1.7"
+  },
+  "build": {
+    "appId": "com.rzb.clinicadentista",
+    "productName": "Sistema de Clínica",
+    "win": {
+      "target": "nsis",
+      "icon": "icon.ico"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true
+    }
+  }
+}

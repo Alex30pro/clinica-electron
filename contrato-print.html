@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-M">
+    <title>Contrato de Tratamento</title>
+    <style>
+        body {
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            font-size: 13pt;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            width: 20cm; /* Largura A4 */
+            margin: 0 auto;
+            padding: 1.5cm 1.5cm; /* Margens */
+            display: flex;
+            flex-direction: column;
+            height: 25cm; /* Altura A4 - margens */
+        }
+
+        .texto-principal {
+            margin-top: 1cm;
+        }
+
+        /* IDs para os campos dinâmicos */
+        #paciente-nome,
+        #paciente-cpf {
+            font-weight: bold;
+            text-decoration: underline;
+        }
+
+        .secao {
+            margin-top: 2.5cm;
+        }
+
+        .secao h3 {
+            font-size: 12pt;
+            font-weight: bold;
+            text-align: center;
+            border-bottom: 1px solid #000;
+            padding-bottom: 5px;
+            margin-bottom: 15px;
+        }
+        
+        #tratamento-descricao,
+        #tratamento-valor {
+            min-height: 100px;
+        }
+
+        .bloco-assinatura {
+            margin-top: auto; /* Empurra para o final */
+            padding-top: 3cm;
+        }
+        
+        .assinaturas {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 2cm;
+        }
+
+        .linha-assinatura {
+            border-top: 1px solid #000;
+            width: 300px;
+            text-align: center;
+            padding-top: 5px;
+        }
+
+        .data {
+            text-align: left;
+        }
+
+        footer {
+            text-align: center;
+            font-size: 11pt;
+            border-top: 2px solid #000;
+            padding-top: 15px;
+            margin-top: 2cm;
+        }
+
+        /* Configuração de Impressão */
+        @page {
+            size: A4;
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <p class="texto-principal">
+            Eu, <span id="paciente-nome">[NOME DO PACIENTE]</span>, 
+            portador do RG _____________________, 
+            CPF <span id="paciente-cpf">[CPF DO PACIENTE]</span>,
+            afirmo estar de acordo com o tratamento proposto pelo Dr. Rafael
+            Zanelli Bernini, CRO-PR 25647, no consultório RZB Odontologia Especializada,
+            CNPJ 40.893.411/0001-78, localizada na rua Francisco Ribas, 1375, bairro Órfãs, Ponta Grossa,
+            PR.
+        </p>
+
+        <div class="secao">
+            <h3>PLANO DE TRATAMENTO PROPOSTO E ACEITO PELO PACIENTE:</h3>
+            <div id="tratamento-descricao">
+                </div>
+        </div>
+
+        <div class="secao">
+            <h3>VALOR TOTAL DO TRATAMENTO E FORMA DE PAGAMENTO:</h3>
+            <div id="tratamento-valor">
+                </div>
+        </div>
+
+        <div class="bloco-assinatura">
+            <div class="assinaturas">
+                <div class="linha-assinatura">
+                    Assinatura dentista
+                </div>
+                <div class="linha-assinatura">
+                    Assinatura paciente
+                </div>
+            </div>
+
+            <p class="data">Ponta Grossa, PR, <span id="data-hoje">[data]</span></p>
+        </div>
+
+
+        <footer>
+            RZB Odontologia Especializada<br>
+            Rua Francisco Ribas, 1375<br>
+            Responsável Técnico: Dr. Rafael Zanelli Bernini, CRO-PR : 25647
+        </footer>
+    </div>
+</body>
+</html>

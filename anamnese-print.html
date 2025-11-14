@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Ficha de Anamnese</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            font-size: 10pt;
+            margin: 0;
+            padding: 0;
+            background: #fff;
+            color: #000;
+        }
+        .pagina {
+            width: 21cm;
+            height: 29.7cm;
+            padding: 1.5cm;
+            margin: 0 auto;
+            box-sizing: border-box;
+            border: 1px solid #000;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        /* Cabeçalho do Dr. Rafael (do contrato) */
+        header {
+            text-align: center;
+            font-size: 11pt;
+            border-bottom: 2px solid #000;
+            padding-bottom: 15px;
+            margin-bottom: 20px;
+        }
+
+        /* Borda e Título da Seção */
+        .secao {
+            border: 2px solid #000;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            padding: 10px 15px;
+        }
+        .secao-titulo {
+            text-align: center;
+            font-weight: bold;
+            font-size: 12pt;
+            margin-top: -22px; /* Puxa o título para cima da borda */
+            margin-bottom: 10px;
+        }
+        .secao-titulo span {
+            background: #fff; /* Fundo branco para cobrir a borda */
+            padding: 0 10px;
+        }
+
+        /* Campos de Identificação */
+        .grid-identificacao {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px 20px;
+        }
+        .campo {
+            border-bottom: 1px solid #aaa;
+            padding: 2px 0;
+            display: flex;
+            align-items: baseline; /* Garante alinhamento */
+        }
+        .campo label {
+            font-weight: bold;
+            margin-right: 5px;
+            flex-shrink: 0; /* Impede que o label encolha */
+        }
+        
+        .campo span {
+            flex-grow: 1; /* Faz o texto ocupar o espaço */
+            word-break: break-word; /* Quebra e-mails longos */
+        }
+
+        .full-width {
+            grid-column: 1 / -1;
+        }
+
+        /* Perguntas da Anamnese */
+        .pergunta {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            padding: 4px 0;
+            border-bottom: 1px dotted #ccc;
+        }
+        .pergunta .texto {
+            flex-grow: 1;
+        }
+        .pergunta .qual {
+            border-bottom: 1px solid #aaa;
+            flex-basis: 200px;
+            margin-left: 10px;
+            /* Adicionado para os spans internos */
+            display: inline-block;
+            min-height: 1em;
+        }
+        .pergunta .sim-nao {
+            flex-shrink: 0;
+            margin-left: 15px;
+            font-size: 9pt;
+        }
+        /* IDs para 'sim' e 'nao' - vamos usar X para marcar */
+        .pergunta .sim-nao span {
+            display: inline-block;
+            width: 12px; /* Largura para o X */
+            text-align: center;
+            font-weight: bold;
+        }
+        /* Span dentro do .qual */
+        .pergunta .qual span {
+            word-break: break-word;
+        }
+
+        /* Odontograma (Anotações) */
+        #odontograma_anotacoes {
+            min-height: 150px;
+            border: 1px solid #eee;
+            padding: 5px;
+            white-space: pre-wrap; /* Mantém as quebras de linha */
+        }
+
+        @page {
+            size: A4;
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+
+<div class="pagina">
+    <header>
+        RZB Odontologia Especializada<br>
+        Rua Francisco Ribas, 1375<br>
+        Responsável Técnico: Dr. Rafael Zanelli Bernini, CRO-PR : 25647
+    </header>
+
+    <div class="secao">
+        <div class="grid-identificacao">
+            <div class="campo full-width">
+                <label>Sr. (a):</label>
+                <span id="paciente-nome">[Nome]</span>
+            </div>
+            <div class="campo">
+                <label>CPF:</label>
+                <span id="paciente-cpf">[CPF]</span>
+            </div>
+            <div class="campo">
+                <label>Data de Nascimento:</label>
+                <span id="paciente-nascimento">[Nascimento]</span>
+            </div>
+            <div class="campo full-width">
+                <label>Email:</label>
+                <span id="paciente-email">[Email]</span>
+            </div>
+            <div class="campo full-width">
+                <label>Endereço:</label>
+                <span id="paciente-endereco">[Endereço]</span>
+            </div>
+            <div class="campo">
+                <label>Fone:</label>
+                <span id="paciente-fone">[Fone]</span>
+            </div>
+            <div class="campo">
+                <label>Falar com:</label>
+                <span id="paciente-emergencia-nome">[Falar com]</span>
+            </div>
+            <div class="campo">
+                <label>Fone de emergência:</label>
+                <span id="paciente-emergencia-fone">[Fone Emergência]</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="secao">
+        <div class="secao-titulo"><span>ANAMNESE</span></div>
+
+        <div class="pergunta">
+            <div class="texto">Está em tratamento médico?</div>
+            <div class="qual"><span id="tratamento_medico_qual"></span></div>
+            <div class="sim-nao">( <span id="tratamento_medico_sim"></span> ) sim ( <span id="tratamento_medico_nao"></span> ) não</div>
+        </div>
+        <div class="pergunta">
+            <div class="texto">Está tomando algum medicamento?</div>
+            <div class="qual"><span id="tomando_medicamento_qual"></span></div>
+            <div class="sim-nao">( <span id="tomando_medicamento_sim"></span> ) sim ( <span id="tomando_medicamento_nao"></span> ) não</div>
+        </div>
+        <div class="pergunta">
+            <div class="texto">Já teve alguma doença (hepatite, chagas, etc)?</div>
+            <div class="qual"><span id="alergia_doenca_qual"></span></div>
+            <div class="sim-nao">( <span id="alergia_doenca_sim"></span> ) sim ( <span id="alergia_doenca_nao"></span> ) não</div>
+        </div>
+        <div class="pergunta">
+            <div class="texto">É diabético?</div>
+            <div class="sim-nao">( <span id="diabetico_sim"></span> ) sim ( <span id="diabetico_nao"></span> ) não</div>
+        </div>
+        <div class="pergunta">
+            <div class="texto">Sabe de alguma doença do coração?</div>
+            <div class="sim-nao">( <span id="doenca_coracao_sim"></span> ) sim ( <span id="doenca_coracao_nao"></span> ) não</div>
+        </div>
+        <div class="pergunta">
+            <div class="texto">É hipertenso (pressão alta)?</div>
+            <div class="sim-nao">( <span id="hipertenso_sim"></span> ) sim ( <span id="hipertenso_nao"></span> ) não</div>
+        </div>
+        <div class="pergunta">
+            <div class="texto">É hemofílico?</div>
+            <div class="sim-nao">( <span id="hemofilico_sim"></span> ) sim ( <span id="hemofilico_nao"></span> ) não</div>
+        </div>
+        <div class="pergunta">
+            <div class="texto">Seus pés incham com facilidade?</div>
+            <div class="sim-nao">( <span id="pes_incham_sim"></span> ) sim ( <span id="pes_incham_nao"></span> ) não</div>
+        </div>
+        <div class="pergunta">
+            <div class="texto">Tem tosse persistente?</div>
+            <div class="sim-nao">( <span id="tosse_persistente_sim"></span> ) sim ( <span id="tosse_persistente_nao"></span> ) não</div>
+        </div>
+        <div class="pergunta">
+            <div class="texto">Tem algum tipo de alergia (Anestesia, etc)?</div>
+            <div class="qual"><span id="alergia_anestesia_qual"></span></div>
+            <div class="sim-nao">( <span id="alergia_anestesia_sim"></span> ) sim ( <span id="alergia_anestesia_nao"></span> ) não</div>
+        </div>
+        <div class="pergunta">
+            <div class="texto">Já foi submetido a anestesia para tratamento odontológico?</div>
+            <div class="sim-nao">( <span id="submetido_anestesia_sim"></span> ) sim ( <span id="submetido_anestesia_nao"></span> ) não</div>
+        </div>
+        <div class="pergunta">
+            <div class="texto">Já teve hemorragia?</div>
+            <div class="sim-nao">( <span id="teve_hemorragia_sim"></span> ) sim ( <span id="teve_hemorragia_nao"></span> ) não</div>
+        </div>
+        <div class="pergunta">
+            <div class="texto">Tem algum vício (fumo, álcool, drogas)?</div>
+            <div class="qual"><span id="tem_vicio_qual"></span></div>
+            <div class="sim-nao">( <span id="tem_vicio_sim"></span> ) sim ( <span id="tem_vicio_nao"></span> ) não</div>
+        </div>
+        <div class="pergunta">
+            <div class="texto">Está grávida?</div>
+            <div class="sim-nao">( <span id="esta_gravida_sim"></span> ) sim ( <span id="esta_gravida_nao"></span> ) não</div>
+        </div>
+        <div class="pergunta">
+            <div class="texto">Sofre de epilepsia?</div>
+            <div class="sim-nao">( <span id="sofre_epilepsia_sim"></span> ) sim ( <span id="sofre_epilepsia_nao"></span> ) não</div>
+        </div>
+         <div class="pergunta">
+            <div class="texto">Tem algo a declarar?</div>
+            <div class="qual"><span id="algo_a_declarar_qual"></span></div>
+            <div class="sim-nao">( <span id="algo_a_declarar_sim"></span> ) sim ( <span id="algo_a_declarar_nao"></span> ) não</div>
+        </div>
+    </div>
+
+    <div class="secao" style="flex-grow: 1; display: flex; flex-direction: column;">
+        <div class="secao-titulo"><span>ODONTOGRAMA</span></div>
+        
+        <div id="odontograma-fundo" style="
+            flex-grow: 1;
+            display: flex;
+            flex-direction: row;
+            min-height: 250px; 
+            max-height: 350px; 
+        ">
+
+            <div id="imagem-container" style="
+                flex-basis: 60%;
+                position: relative;
+                height: 100%;
+                overflow: hidden;
+            ">
+                <img id="odontograma-imagem-src" src="" style="
+                    position: absolute;
+                    width: 100%;
+                    height: 100%;
+                    top: 0;
+                    left: 0;
+                    object-fit: fill; 
+                    object-position: center left; 
+                    z-index: 1; 
+                " />
+                </div>
+
+            <div id="linhas-container" style="
+                flex-basis: 40%;
+                height: 100%; 
+                padding-left: 15px;
+                display: flex;
+                flex-direction: column;
+            ">
+                <div id="odontograma_anotacoes" style="
+                    width: 100%; 
+                    white-space: pre-wrap;
+                    font-size: 12pt;
+                    color: black;
+                    padding-bottom: 10px; /* Espaço entre o texto e a primeira linha */
+                ">
+                    </div>
+
+                <div id="linhas-manuais" style="
+                    flex-grow: 1; /* Ocupa o resto do espaço vertical */
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-around; /* Espaça as linhas igualmente */
+                ">
+                    <div style="border-bottom: 1px solid #000;">&nbsp;</div>
+                    <div style="border-bottom: 1px solid #000;">&nbsp;</div>
+                    <div style="border-bottom: 1px solid #000;">&nbsp;</div>
+                    <div style="border-bottom: 1px solid #000;">&nbsp;</div>
+                    <div style="border-bottom: 1px solid #000;">&nbsp;</div>
+                    <div style="border-bottom: 1px solid #000;">&nbsp;</div>
+                    <div style="border-bottom: 1px solid #000;">&nbsp;</div>
+                    <div style="border-bottom: 1px solid #000;">&nbsp;</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

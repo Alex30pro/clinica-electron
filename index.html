@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Gerenciamento de Clínica - Início</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html { 
+            background: transparent;
+            background-size: cover; 
+            }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background: transparent;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: white;
+        }
+
+        .container {
+            text-align: center;
+            max-width: 600px;
+            padding: 40px;
+            background: rgba(35, 40, 60, 0.6);
+            backdrop-filter: blur(25px);
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            margin-top: 50px;
+        }
+
+        .logo {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            font-size: 36px;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .subtitle {
+            font-size: 18px;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+
+        .btn {
+            display: inline-block;
+            background: rgba(35, 40, 60, 0.4);
+            color: white;
+            padding: 15px 30px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: 600;
+            margin: 10px;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .btn:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .features {
+            margin-top: 40px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .feature {
+            background: rgba(35, 40, 60, 0.3);
+            padding: 20px;
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .feature i {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .feature h3 {
+            font-size: 16px;
+            margin-bottom: 5px;
+        }
+
+        .feature p {
+            font-size: 14px;
+            opacity: 0.8;
+        }
+
+        .warning {
+            background: rgba(255, 193, 7, 0.2);
+            border: 1px solid rgba(255, 193, 7, 0.3);
+            padding: 15px;
+            border-radius: 10px;
+            margin-top: 20px;
+            font-size: 14px;
+        }
+
+        .warning i {
+            margin-right: 10px;
+        }
+
+        /* INÍCIO: NOVOS ESTILOS DA BARRA DE TÍTULO */
+        .titlebar {
+            width: 100%;
+            height: 40px; /* Altura da barra */
+            display: flex;
+            position: fixed; /* Fixa no topo */
+            top: 0;
+            left: 0;
+            background: rgba(35, 40, 60, 0.6);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .drag-region {
+            flex-grow: 1; /* Ocupa todo o espaço para arrastar */
+            -webkit-app-region: drag; 
+        }
+        .window-controls {
+            display: flex;
+            -webkit-app-region: no-drag; /* Botões NÃO são arrastáveis */
+        }
+        .window-control-btn {
+            width: 45px;
+            height: 100%;
+            border: none;
+            background: transparent;
+            color: #ccc;
+            font-size: 14px;
+            transition: background 0.2s ease;
+        }
+        .window-control-btn i {
+            font-size: 12px;
+        }
+        .window-control-btn:hover {
+            background: rgba(255, 255, 255, 0.1);
+            color: #fff;
+        }
+        .window-control-btn.btn-close:hover {
+            background: #e81123;
+            color: #fff;
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <div class="titlebar">
+        <div class="drag-region"></div>
+
+        <div class="window-controls">
+            <button class="window-control-btn" id="btn-minimize">
+                <i class="fas fa-window-minimize"></i>
+            </button>
+            <button class="window-control-btn" id="btn-maximize">
+                <i class="fas fa-window-maximize"></i>
+            </button>
+            <button class="window-control-btn btn-close" id="btn-close">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="logo">
+            <i class="fas fa-heartbeat"></i>
+        </div>
+        
+        <h1>Sistema de Gerenciamento</h1>
+        <p class="subtitle">Para Consultórios e Clínicas</p>
+        
+        <div style="margin-bottom: 30px;">
+            <button class="btn" onclick="window.api.loadMainWindow()">
+                <i class="fas fa-play"></i> Iniciar Sistema
+            </button>
+        </div>
+
+        <div class="features">
+            <div class="feature">
+                <i class="fas fa-users"></i>
+                <h3>Gerenciar Pacientes</h3>
+                <p>Cadastro completo e histórico</p>
+            </div>
+            <div class="feature">
+                <i class="fas fa-calendar-alt"></i>
+                <h3>Agendar Consultas</h3>
+                <p>Calendário interativo</p>
+            </div>
+            <div class="feature">
+                <i class="fas fa-chart-bar"></i>
+                <h3>Relatórios</h3>
+                <p>Estatísticas e análises</p>
+            </div>
+            <div class="feature">
+                <i class="fas fa-download"></i>
+                <h3>Funciona Offline</h3>
+                <p>Sem necessidade de internet</p>
+            </div>
+        </div>
+
+        <div class="warning">
+            <i class="fas fa-info-circle"></i>
+            <strong>Importante:</strong> Este sistema funciona 100% offline. Todos os dados são salvos no seu computador.
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('btn-minimize').addEventListener('click', () => {
+            window.api.minimizeWindow();
+            });
+        document.getElementById('btn-maximize').addEventListener('click', () => {
+            window.api.maximizeWindow();    
+            });
+        document.getElementById('btn-close').addEventListener('click', () => {
+            window.api.closeWindow();
+            });    
+    </script>
+</body>
+</html>
