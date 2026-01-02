@@ -1,6 +1,5 @@
 const { contextBridge, ipcRenderer } = require('electron');
 
-// Expõe funções seguras para o "mundo" do seu HTML (o Renderer Process)
 contextBridge.exposeInMainWorld(
     'api',
     {
