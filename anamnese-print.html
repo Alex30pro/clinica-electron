@@ -23,7 +23,6 @@
             flex-direction: column;
         }
         
-        /* Cabeçalho do Dr. Rafael (do contrato) */
         header {
             text-align: center;
             font-size: 11pt;
@@ -32,7 +31,6 @@
             margin-bottom: 20px;
         }
 
-        /* Borda e Título da Seção */
         .secao {
             border: 2px solid #000;
             border-radius: 10px;
@@ -43,15 +41,14 @@
             text-align: center;
             font-weight: bold;
             font-size: 12pt;
-            margin-top: -22px; /* Puxa o título para cima da borda */
+            margin-top: -22px; 
             margin-bottom: 10px;
         }
         .secao-titulo span {
-            background: #fff; /* Fundo branco para cobrir a borda */
+            background: #fff; 
             padding: 0 10px;
         }
 
-        /* Campos de Identificação */
         .grid-identificacao {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -61,24 +58,23 @@
             border-bottom: 1px solid #aaa;
             padding: 2px 0;
             display: flex;
-            align-items: baseline; /* Garante alinhamento */
+            align-items: baseline; 
         }
         .campo label {
             font-weight: bold;
             margin-right: 5px;
-            flex-shrink: 0; /* Impede que o label encolha */
+            flex-shrink: 0; 
         }
         
         .campo span {
-            flex-grow: 1; /* Faz o texto ocupar o espaço */
-            word-break: break-word; /* Quebra e-mails longos */
+            flex-grow: 1; 
+            word-break: break-word; 
         }
 
         .full-width {
             grid-column: 1 / -1;
         }
 
-        /* Perguntas da Anamnese */
         .pergunta {
             display: flex;
             justify-content: space-between;
@@ -93,7 +89,6 @@
             border-bottom: 1px solid #aaa;
             flex-basis: 200px;
             margin-left: 10px;
-            /* Adicionado para os spans internos */
             display: inline-block;
             min-height: 1em;
         }
@@ -102,24 +97,23 @@
             margin-left: 15px;
             font-size: 9pt;
         }
-        /* IDs para 'sim' e 'nao' - vamos usar X para marcar */
+
         .pergunta .sim-nao span {
             display: inline-block;
-            width: 12px; /* Largura para o X */
+            width: 12px; 
             text-align: center;
             font-weight: bold;
         }
-        /* Span dentro do .qual */
+
         .pergunta .qual span {
             word-break: break-word;
         }
 
-        /* Odontograma (Anotações) */
         #odontograma_anotacoes {
             min-height: 150px;
             border: 1px solid #eee;
             padding: 5px;
-            white-space: pre-wrap; /* Mantém as quebras de linha */
+            white-space: pre-wrap; 
         }
 
         @page {
@@ -290,15 +284,15 @@
                     white-space: pre-wrap;
                     font-size: 12pt;
                     color: black;
-                    padding-bottom: 10px; /* Espaço entre o texto e a primeira linha */
+                    padding-bottom: 10px;
                 ">
                     </div>
 
                 <div id="linhas-manuais" style="
-                    flex-grow: 1; /* Ocupa o resto do espaço vertical */
+                    flex-grow: 1; 
                     display: flex;
                     flex-direction: column;
-                    justify-content: space-around; /* Espaça as linhas igualmente */
+                    justify-content: space-around; 
                 ">
                     <div style="border-bottom: 1px solid #000;">&nbsp;</div>
                     <div style="border-bottom: 1px solid #000;">&nbsp;</div>
