@@ -91,13 +91,12 @@
             font-size: 18px;
         }
 
-        /* Main Content */
         .main-content {
             flex: 1;
-            padding: 0; /* Remove padding para a titlebar */
+            padding: 0; 
             overflow-y: hidden;
             height: 100vh;
-            display: flex; /* Para a titlebar funcionar */
+            display: flex; 
             flex-direction: column;
         }
 
@@ -106,8 +105,8 @@
             backdrop-filter: blur(20px);
             border-radius: 15px;
             padding: 25px;
-            margin: 20px; /* Adiciona margem de volta */
-            margin-top: 0; /* Tira margem do topo */
+            margin: 20px; 
+            margin-top: 0; 
             box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
             border: 1px solid rgba(255, 255, 255, 0.1);
             flex-shrink: 0
@@ -125,10 +124,9 @@
             font-size: 16px;
         }
 
-        /* Dashboard */
         .dashboard { 
             display: none; 
-            margin: 20px; /* Adiciona a margem que .content-section tinha */
+            margin: 20px; 
             margin-top: 0;
         }
 
@@ -155,7 +153,6 @@
         .stat-card h3 { font-size: 32px; font-weight: 700; color: #eee; margin-bottom: 5px; }
         .stat-card p { color: #ccc; font-size: 14px; }
 
-        /* Content Sections */
         .content-section {
             display: none; 
             background: rgba(45, 50, 70, 0.8);
@@ -223,7 +220,6 @@
             margin-right: 8px;
         }
 
-        /* Forms */
         .form-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -305,7 +301,6 @@
             background: #dc3545;
         }
 
-        /* Calendar */
         .calendar {
             background: transparent;
             border-radius: 0;
@@ -371,7 +366,6 @@
             margin: 2px auto;
         }
 
-        /* Modal */
         .modal {
             display: none;
             position: fixed;
@@ -428,7 +422,6 @@
             color: #fff;
         }
 
-        /* Responsive */
         @media (max-width: 768px) {
             .container {
                 flex-direction: column;
@@ -448,7 +441,6 @@
             }
         }
 
-        /* Animations */
         @keyframes fadeInUp {
             from {
                 opacity: 0;
@@ -464,9 +456,8 @@
             animation: fadeInUp 0.6s ease;
         }
 
-        /* Estilo para o novo link de "ver paciente" */
         .link-paciente {
-            color: #007bff; /* Um azul padrão de link */
+            color: #007bff; 
             text-decoration: none;
             font-weight: 500;
             cursor: pointer;
@@ -474,16 +465,16 @@
         .link-paciente:hover {
             text-decoration: underline;
         }
-        /* --- Estilo para o Modal de Zoom --- */
+
         .modal-zoom {
             display: none;
             position: fixed;
-            z-index: 2000; /* Mais alto que o outro modal */
+            z-index: 2000; 
             left: 0;
             top: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0, 0, 0, 0.8); /* Fundo mais escuro */
+            background: rgba(0, 0, 0, 0.8); 
             backdrop-filter: blur(5px);
             justify-content: center;
             align-items: center;
@@ -496,28 +487,25 @@
         .modal-zoom-content img {
             width: 100%;
             height: 100%;
-            object-fit: contain; /* Garante que a imagem caiba */
+            object-fit: contain; 
         }
-        /* ======================================= */
-        /* INÍCIO: NOVOS ESTILOS DA BARRA DE TÍTULO */
-        /* ======================================= */
+
         .titlebar {
             width: 100%;
-            height: 40px; /* Altura da barra */
+            height: 40px; 
             display: flex;
-            flex-shrink: 0; /* Impede que encolha */
+            flex-shrink: 0; 
             background: rgba(35, 40, 60, 0.6);
             backdrop-filter: blur(20px);
             border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         }
         .drag-region {
-            flex-grow: 1; /* Ocupa todo o espaço para arrastar */
-            /* Esta é a mágica do Electron: */
+            flex-grow: 1; 
             -webkit-app-region: drag; 
         }
         .window-controls {
             display: flex;
-            -webkit-app-region: no-drag; /* Botões NÃO são arrastáveis */
+            -webkit-app-region: no-drag; 
         }
         .window-control-btn {
             width: 45px;
@@ -529,14 +517,14 @@
             transition: background 0.2s ease;
         }
         .window-control-btn i {
-            font-size: 12px; /* Ajusta tamanho dos ícones */
+            font-size: 12px; 
         }
         .window-control-btn:hover {
             background: rgba(255, 255, 255, 0.1);
             color: #fff;
         }
         .window-control-btn.btn-close:hover {
-            background: #e81123; /* Vermelho ao passar o mouse */
+            background: #e81123; 
             color: #fff;
         }
         .search-bar-container {
@@ -546,8 +534,8 @@
             border: 1px solid rgba(255, 255, 255, 0.1);
             border-radius: 8px;
             padding: 8px 12px;
-            flex-grow: 1; /* Faz ela ocupar o espaço disponível */
-            margin: 0 20px; /* Espaço entre o título e o botão */
+            flex-grow: 1; 
+            margin: 0 20px; 
         }
 
         .search-bar-container i {
@@ -573,7 +561,6 @@
 </head>
 <body>
     <div class="container">
-        <!-- Sidebar -->
         <div class="sidebar">
             <div class="logo">
                 <h1><i class="fas fa-heartbeat"></i> RZB</h1>
@@ -625,7 +612,6 @@
         </div>
 
        <div class="main-content">
-
             <div class="titlebar">
                 <div class="drag-region"></div>
                 <div class="window-controls">
@@ -642,13 +628,11 @@
             </div>
 
             <div class="content-wrapper">
-            
                 <div class="header">
                     <h2 id="page-title">Dashboard</h2>
                     <p id="page-subtitle">Visão geral da clínica</p>
                 </div>
 
-            <!-- Dashboard -->
             <div id="dashboard" class="dashboard active">
                 <div class="stats-grid">
                     <div class="stat-card">
@@ -698,7 +682,6 @@
                 </div>
             </div>
 
-            <!-- Pacientes Section -->
             <div id="pacientes" class="content-section">
                 <div class="section-header">
                     <h3>Gerenciamento de Pacientes</h3>
@@ -733,7 +716,6 @@
                 </div>
             </div>
 
-            <!-- Consultas Section -->
             <div id="consultas" class="content-section">
                 <div class="section-header">
                     <h3>Registro de Consultas</h3>
@@ -767,7 +749,6 @@
                 </div>
             </div>
 
-            <!-- Agenda Section -->
             <div id="agenda" class="content-section">
                 <div class="section-header">
                     <h3>Agenda de Consultas</h3>
@@ -795,12 +776,10 @@
                         </div>
                     </div>
                     <div class="calendar-grid" id="calendar-grid">
-                        <!-- Calendar days will be generated by JavaScript -->
                     </div>
                 </div>
             </div>
 
-            <!-- Relatórios Section -->
             <div id="relatorios" class="content-section">
                 <div class="section-header">
                     <h3>Relatórios e Estatísticas</h3>
@@ -947,7 +926,6 @@
         </div>
         </div>
 
-    <!-- Modal Paciente -->
     <div id="modal-paciente" class="modal">
         <div class="modal-content">
             <div class="modal-header">
@@ -998,7 +976,6 @@
         </div>
     </div>
 
-    <!-- Modal Consulta -->
   <div id="modal-consulta" class="modal">
         <div class="modal-content">
             <div class="modal-header">
@@ -1771,10 +1748,9 @@ class SistemaClinica {
         this.currentMonth = this.currentDate.getMonth();
         this.currentYear = this.currentDate.getFullYear();
         this.confirmCallback = null;
-        this.init(); // O init() vai carregar os dados
+        this.init(); 
     }
 
-    // --- FUNÇÕES DE CONTROLE DA JANELA ---
         minimizeWindow() {
             window.api.minimizeWindow();
         }
@@ -1790,7 +1766,6 @@ class SistemaClinica {
     async init() {
         this.setupEventListeners();
         
-        // Carrega todos os dados do banco ao iniciar
         await this.updateDashboard(); 
         await this.loadPacientes(); 
         await this.loadConsultas();
@@ -1802,7 +1777,6 @@ class SistemaClinica {
     }
 
     setupEventListeners() {
-        // Navigation
         document.querySelectorAll('.nav-link').forEach(link => {
             link.addEventListener('click', (e) => {
                 e.preventDefault();
@@ -1830,11 +1804,9 @@ class SistemaClinica {
                 this.saveAnamnese();
             });
 
-        // Data de hoje no modal de consulta
         const today = new Date().toISOString().split('T')[0];
         document.getElementById('consulta-data').value = today;
 
-        // --- LIGA OS BOTÕES DA JANELA ---
             document.getElementById('btn-minimize').addEventListener('click', () => {
                 this.minimizeWindow();
             });
@@ -1845,7 +1817,6 @@ class SistemaClinica {
                 this.closeWindow();
             });
         
-        // Ouvinte da barra de busca de Estoque
         document.getElementById('search-estoque-input').addEventListener('keyup', () => {
             this.loadEstoque();
         });
@@ -1866,14 +1837,12 @@ class SistemaClinica {
     }
 
     switchSection(sectionName) {
-        // ... (Seu código para 'active' nas 'nav-link' e 'content-section') ...
         document.querySelectorAll('.nav-link').forEach(link => link.classList.remove('active'));
         document.querySelector(`[data-section="${sectionName}"]`).classList.add('active');
         document.querySelectorAll('.content-section, .dashboard').forEach(section => section.classList.remove('active'));
         const targetSection = document.getElementById(sectionName);
         if (targetSection) targetSection.classList.add('active');
 
-        // ... (Seu código para 'page-title' e 'page-subtitle') ...
         const titles = {
             dashboard: { title: 'Dashboard', subtitle: 'Visão geral da clínica' },
             pacientes: { title: 'Pacientes', subtitle: 'Gerenciamento de pacientes' },
@@ -1888,56 +1857,42 @@ class SistemaClinica {
         document.getElementById('page-subtitle').textContent = titleInfo.subtitle;
 
 
-        // Atualiza o calendário ao visitar a agenda
         if (sectionName === 'agenda') {
             this.generateCalendar();
         }
     }
 
     abrirModalPaciente() {
-        // 1. Limpa o formulário de qualquer dado de edição anterior
         document.getElementById('form-paciente').reset();
-        
-        // 2. Garante que o ID do paciente esteja vazio
+
         document.getElementById('paciente-id').value = '';
-        
-        // 3. Define o título do modal para "Novo"
+
         document.getElementById('titulo-modal-paciente').textContent = 'Cadastrar Novo Paciente';
-        
-        // 4. Abre o modal
+
         document.getElementById('modal-paciente').style.display = 'flex';
     }
 
-    /**
-     * Abre o modal de confirmação
-     * @param {string} mensagem - A pergunta (ex: "Tem certeza?")
-     * @param {function} callback - A função que deve ser executada se o usuário clicar em "Confirmar"
-     */
     abrirModalConfirmacao(mensagem, callback) {
-        // 1. Armazena a função que devemos executar
         this.confirmCallback = callback;
         
-        // 2. Define a mensagem
         document.getElementById('confirm-mensagem').textContent = mensagem;
 
-        // 3. Abre o modal
         document.getElementById('modal-confirmacao').style.display = 'flex';
     }
 
     fecharModalConfirmacao() {
         document.getElementById('modal-confirmacao').style.display = 'none';
-        this.confirmCallback = null; // Limpa a ação
+        this.confirmCallback = null; 
     }
 
     async executarConfirmacao() {
         if (this.confirmCallback) {
-            await this.confirmCallback(); // 1. Executa a ação (ex: a exclusão)
+            await this.confirmCallback(); 
         }
-        this.fecharModalConfirmacao(); // 2. Fecha o modal
+        this.fecharModalConfirmacao(); 
     }
 
     async savePaciente() {
-            // Pega os dados do formulário
             const id = document.getElementById('paciente-id').value;
             const nome = document.getElementById('paciente-nome').value;
             const telefone = document.getElementById('paciente-telefone').value;
@@ -1951,12 +1906,10 @@ class SistemaClinica {
             let params = [];
             let message = '';
 
-            // Pega a data de hoje (para novos pacientes)
             const dataCadastro = new Date().toISOString().split('T')[0];
 
             try {
                 if (id) {
-                    // --- EDITAR PACIENTE ---
                     sql = `
                         UPDATE pacientes SET 
                         nome = ?, telefone = ?, email = ?, nascimento = ?, cpf = ?, endereco = ?, observacoes = ? 
@@ -1965,8 +1918,7 @@ class SistemaClinica {
                     params = [nome, telefone, email, nascimento, cpf, endereco, observacoes, id];
                     message = 'Paciente atualizado com sucesso!';
                 } else {
-                    // --- NOVO PACIENTE ---
-                    const novoId = 'pid_' + new Date().getTime(); // Cria ID único
+                    const novoId = 'pid_' + new Date().getTime(); 
                     sql = `
                         INSERT INTO pacientes (id, nome, telefone, email, nascimento, cpf, endereco, observacoes, dataCadastro)
                         VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
@@ -1979,8 +1931,8 @@ class SistemaClinica {
                 
                 this.showMessage(message, 'success');
                 this.fecharModal('modal-paciente');
-                this.loadPacientes(); // Recarrega a lista
-                this.updatePacientesSelect(); // Atualiza os dropdowns
+                this.loadPacientes(); 
+                this.updatePacientesSelect(); 
 
             } catch (err) {
                 console.error('Erro ao salvar paciente:', err.message);
@@ -1991,7 +1943,7 @@ class SistemaClinica {
     async loadPacientes() {
         const tbody = document.getElementById('pacientes-tbody');
         const searchTerm = document.getElementById('search-paciente-input').value;
-        const statusText = document.getElementById('pacientes-lista-status'); // <-- NOVA LINHA
+        const statusText = document.getElementById('pacientes-lista-status'); 
 
         let sql = `SELECT id, nome, telefone, email, nascimento FROM pacientes`;
         const params = [];
@@ -1999,7 +1951,7 @@ class SistemaClinica {
         if (searchTerm) {
             sql += ` WHERE nome LIKE ? ORDER BY nome ASC`;
             params.push(`%${searchTerm}%`);
-            statusText.textContent = `Mostrando resultados para "${searchTerm}"...`; // <-- NOVA LINHA
+            statusText.textContent = `Mostrando resultados para "${searchTerm}"...`; 
         } else {
             sql += ` ORDER BY dataCadastro DESC NULLS LAST LIMIT 20`; 
             statusText.textContent = `Mostrando os 20 pacientes mais recentes.`; 
@@ -2040,7 +1992,7 @@ class SistemaClinica {
             } else {
                 tbody.innerHTML = `<tr><td colspan="5" style="text-align: center; color: #ccc;">Nenhum paciente encontrado.</td></tr>`;
                 if (!searchTerm) {
-                    statusText.textContent = 'Nenhum paciente cadastrado ainda.'; // <-- NOVA LINHA
+                    statusText.textContent = 'Nenhum paciente cadastrado ainda.'; 
                 }
             }
         } catch (err) {
@@ -2052,8 +2004,6 @@ class SistemaClinica {
     async abrirModalViewPaciente(pacienteId) {
         console.log(`Buscando dados completos para o paciente ID: ${pacienteId}`);
         
-        // --- 1. SQL CORRIGIDO ---
-        // Usamos 'p.nome AS pacienteNome' para dar um apelido e evitar o conflito
         const sql = `
             SELECT 
                 p.id, 
@@ -2079,8 +2029,6 @@ class SistemaClinica {
             const dados = resultados[0]; 
             const get = (key) => (dados[key] || '---'); 
             
-            // --- 3. PREENCHIMENTO CORRIGIDO ---
-            // Agora usamos os "apelidos" (pacienteNome, pacienteCpf, etc.)
             document.getElementById('view-paciente-nome').textContent = `Prontuário de: ${get('pacienteNome')}`;
             document.getElementById('view-paciente-nome-completo').textContent = get('pacienteNome');
             document.getElementById('view-paciente-cpf').textContent = get('pacienteCpf');
@@ -2088,12 +2036,9 @@ class SistemaClinica {
             document.getElementById('view-paciente-telefone').textContent = get('pacienteTelefone');
             document.getElementById('view-paciente-email').textContent = get('pacienteEmail');
             document.getElementById('view-paciente-endereco').textContent = get('pacienteEndereco');
-            
-            // Estes dados vêm da anamnese (tabela 'a'), então os nomes originais funcionam
             document.getElementById('view-paciente-fone-emergencia').textContent = get('fone_emergencia');
             document.getElementById('view-paciente-falar-com').textContent = get('falar_com');
 
-            // --- 4. Preenche a Anamnese (Código não muda) ---
             const listaAnamnese = document.getElementById('view-anamnese-lista');
             const statusAnamnese = document.getElementById('view-anamnese-status');
             
@@ -2137,11 +2082,8 @@ class SistemaClinica {
                 listaAnamnese.innerHTML = '';
             }
 
-            // --- 5. Preenche o Odontograma (Código não muda) ---
             const anotacoes = get('odontograma_anotacoes');
             document.getElementById('view-odontograma-texto-anotacoes').textContent = anotacoes !== '---' ? anotacoes : 'Nenhuma anotação.';
-
-            // --- 6. Abre o Modal (Código não muda) ---
             document.getElementById('modal-paciente-view').style.display = 'flex';
 
         } catch (err) {
@@ -2163,7 +2105,6 @@ class SistemaClinica {
         lista.innerHTML = '<li>Buscando consultas...</li>'; // Feedback
         
         try {
-            // Busca as consultas E o nome do paciente
             const sql = `
                 SELECT c.hora, c.tipo, p.nome 
                 FROM consultas c 
@@ -2226,30 +2167,23 @@ class SistemaClinica {
 
         const exclusaoCallback = async () => {
             try {
-                // Busca todos os tratamentos do paciente
                 const tratamentos = await window.api.all('SELECT id FROM tratamentos WHERE pacienteId = ?', [id]);
                 if (tratamentos && tratamentos.length > 0) {
                     const tratIds = tratamentos.map(t => t.id);
-                    // Apaga todos os pagamentos ligados a esses tratamentos
                     await window.api.run(`DELETE FROM pagamentos WHERE tratamentoId IN (${tratIds.map(() => '?').join(',')})`, tratIds);
                 }
-                // B. Apaga os dados "filhos"
                 await window.api.run('DELETE FROM tratamentos WHERE pacienteId = ?', [id]);
                 await window.api.run('DELETE FROM consultas WHERE pacienteId = ?', [id]);
                 await window.api.run('DELETE FROM anamnese WHERE pacienteId = ?', [id]);
-
-                // C. Finalmente, apaga o paciente
                 await window.api.run('DELETE FROM pacientes WHERE id = ?', [id]);
                 
                 console.log('Paciente e todos os dados associados excluídos com sucesso.');
-                // D. Recarrega tudo
-                this.loadPacientes(); // Recarrega a lista de pacientes
-                this.updatePacientesSelect(); // Atualiza os dropdowns em outros modais
-                this.updateDashboard(); // Atualiza os contadores
+                this.loadPacientes(); 
+                this.updatePacientesSelect(); 
+                this.updateDashboard(); 
                 
             } catch (err) {
                 console.error('Erro ao excluir paciente:', err.message);
-                // this.showMessage('Erro ao excluir paciente: ' + err.message, 'error');
             }
         };
 
@@ -2290,7 +2224,6 @@ class SistemaClinica {
                     const dataFormatada = t.data.split('-').reverse().join('/');
                     const valorFormatado = new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(t.valor_total);
 
-                    // --- NOVO CÁLCULO E FORMATAÇÃO ---
                     const valorRestante = t.valor_total - t.totalPago;
                     const valorRestanteFormatado = new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(valorRestante);
 
@@ -2314,7 +2247,6 @@ class SistemaClinica {
                     `;
                 });
             } else {
-                // CORREÇÃO: O colspan agora precisa ser 7 por causa da nova coluna.
                 tbody.innerHTML = '<tr><td colspan="7" style="text-align: center; color: grey;">Nenhum tratamento registrado</td></tr>';
             }
         } catch (err) {
@@ -2328,7 +2260,6 @@ class SistemaClinica {
         selectPacientes.options.length = 1; 
         
         try {
-            // CORRIGIDO: de window.api.dbQuery para window.api.all
             const pacientes = await window.api.all('SELECT id, nome FROM pacientes ORDER BY nome ASC', []);
             
             if (pacientes) {
@@ -2399,12 +2330,11 @@ class SistemaClinica {
 
         this.abrirModalConfirmacao(
             'Tem certeza que deseja excluir este tratamento?\n\nTodos os pagamentos associados também serão excluídos. Esta ação não pode ser desfeita.',
-            exclusaoCallback // Passa a função
+            exclusaoCallback 
         );
     }
 
     abrirModalPagamento(id, nomePaciente, valorTotal, valorRestante, status) {
-        // Limpa o formulário e preenche os dados
         document.getElementById('form-pagamento').reset();
         document.getElementById('pagamento-tratamento-id').value = id;
 
@@ -2422,9 +2352,6 @@ class SistemaClinica {
          document.getElementById('modal-pagamento').style.display = 'none';
     }
 
-    // =============================================
-    //   INÍCIO: MÉTODOS DO MÓDULO DE ESTOQUE (ATUALIZADO)
-    // =============================================
     async loadEstoque() {
         const tbody = document.getElementById('estoque-tbody');
         const searchTerm = document.getElementById('search-estoque-input').value;
@@ -2444,7 +2371,7 @@ class SistemaClinica {
 
         try {
             const itens = await window.api.all(sql, params);
-            tbody.innerHTML = ''; // Limpa a tabela
+            tbody.innerHTML = ''; 
 
             if (itens && itens.length > 0) {
                 itens.forEach(item => {
@@ -2512,7 +2439,6 @@ class SistemaClinica {
     }
 
     async salvarItem() {
-        // Pega os dados do modal
         const id = document.getElementById('item-id').value;
         const nome = document.getElementById('item-nome').value;
         const categoria = document.getElementById('item-categoria').value;
@@ -2529,7 +2455,6 @@ class SistemaClinica {
 
         try {
             if (id) {
-                // --- EDITAR ITEM ---
                 sql = `
                     UPDATE estoque SET 
                     nome = ?, categoria = ?, limite_minimo = ?, 
@@ -2540,7 +2465,6 @@ class SistemaClinica {
                 params = [nome, categoria, limite_minimo, fornecedor_nome, fornecedor_telefone, fornecedor_endereco, notas, dataAtual, id];
                 message = 'Item atualizado com sucesso!';
             } else {
-                // --- NOVO ITEM ---
                 sql = `
                     INSERT INTO estoque (nome, categoria, limite_minimo, fornecedor_nome, fornecedor_telefone, fornecedor_endereco, notas, ultima_atualizacao, quantidade)
                     VALUES (?, ?, ?, ?, ?, ?, ?, ?, 0)
@@ -2553,7 +2477,7 @@ class SistemaClinica {
             
             this.showMessage(message, 'success');
             this.fecharModalEstoque();
-            this.loadEstoque(); // Recarrega a lista
+            this.loadEstoque(); 
 
         } catch (err) {
             console.error('Erro ao salvar item:', err.message);
@@ -2602,7 +2526,7 @@ class SistemaClinica {
         const tipo = document.getElementById('atualizar-tipo').value;
         const quantidade = parseInt(document.getElementById('atualizar-quantidade').value, 10);
         const valorLote = document.getElementById('item-valor-lote').value;
-        const notasMov = document.getElementById('atualizar-notas').value; // Usaremos como 'fornecedor_compra'
+        const notasMov = document.getElementById('atualizar-notas').value; 
         const dataAtual = new Date().toISOString().split('T')[0];
         
         if (quantidade <= 0) {
@@ -2611,31 +2535,27 @@ class SistemaClinica {
         }
 
         try {
-            // 1. Pega a quantidade atual
             const item = await window.api.all('SELECT quantidade FROM estoque WHERE id = ?', [id]);
             let qtdAtual = item[0].quantidade;
             
             let novaQtd = 0;
             if (tipo === 'entrada') {
                 novaQtd = qtdAtual + quantidade;
-                // --- NOVIDADE: Salva na tabela estoque_compras ---
                 const sqlCompra = `
                     INSERT INTO estoque_compras (itemId, data_compra, quantidade_comprada, valor_lote, fornecedor_compra)
                     VALUES (?, ?, ?, ?, ?)
                 `;
-                // Se o valor não for preenchido, salva como NULL
+
                 const valorLoteFinal = valorLote ? parseFloat(valorLote) : null;
                 await window.api.run(sqlCompra, [id, dataAtual, quantidade, valorLoteFinal, notasMov]);
-                // --- FIM DA NOVIDADE ---
 
-            } else { // tipo === 'saida'
+            } else { 
                 novaQtd = qtdAtual - quantidade;
                 if (novaQtd < 0) {
                     this.showMessage('Erro: Não é possível dar saída, estoque ficaria negativo.', 'error');
                     return;
                 }
             }
-            // 2. Atualiza a quantidade total no banco
             const sql = 'UPDATE estoque SET quantidade = ?, ultima_atualizacao = ? WHERE id = ?';
             await window.api.run(sql, [novaQtd, dataAtual, id]);
             
@@ -2651,10 +2571,9 @@ class SistemaClinica {
     }
 
     async excluirItemEstoque(id) {
-        // Reutiliza o nosso modal de confirmação universal
         this.abrirModalConfirmacao(
             'Tem certeza que deseja excluir este item do estoque?\n\nTODO O HISTÓRICO DE COMPRAS deste item também será apagado. Esta ação não pode ser desfeita.',
-            async () => { // O callback
+            async () => { 
                 try {
                     await window.api.run('DELETE FROM estoque WHERE id = ?', [id]);
                     this.showMessage('Item excluído com sucesso.', 'success');
@@ -2666,31 +2585,24 @@ class SistemaClinica {
             }
         );
     }
-    // =============================================
-    //   FIM: MÉTODOS DO MÓDULO DE ESTOQUE
-    // =============================================
 
     async exportarBackup() {
         const btn = document.getElementById('btn-exportar-backup');
         const statusMsg = document.getElementById('export-status-message');
 
-        // Desativa o botão e mostra "carregando"
         btn.disabled = true;
         btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Gerando backup...';
         statusMsg.textContent = 'Isso pode levar alguns segundos...';
         statusMsg.style.color = '#ffc107';
 
         try {
-            // 1. Chama a função do preload/main.js
             const resultado = await window.api.exportarBackup();
 
             if (resultado.success) {
-                // 2. Sucesso!
                 statusMsg.textContent = resultado.message;
                 statusMsg.style.color = 'green';
                 this.showMessage('Backup gerado com sucesso!', 'success');
             } else {
-                // 3. Erro (ou cancelado pelo usuário)
                 statusMsg.textContent = `Falha: ${resultado.message}`;
                 statusMsg.style.color = 'red';
                 if (!resultado.message.includes('cancelada')) {
@@ -2705,7 +2617,6 @@ class SistemaClinica {
             this.showMessage('Erro fatal: ' + err.message, 'error');
         }
 
-        // 4. Reativa o botão
         btn.disabled = false;
         btn.innerHTML = '<i class="fas fa-file-export"></i> Exportar Backup Completo';
     }
@@ -2716,14 +2627,12 @@ class SistemaClinica {
 
     async abrirModalHistorico(itemId) {
         const tbody = document.getElementById('historico-tbody');
-        tbody.innerHTML = ''; // Limpa a tabela
+        tbody.innerHTML = ''; 
         
         try {
-            // Pega o nome do item
             const itemInfo = await window.api.all('SELECT nome FROM estoque WHERE id = ?', [itemId]);
             document.getElementById('historico-item-nome').textContent = itemInfo[0].nome;
             
-            // Busca o histórico
             const sql = 'SELECT * FROM estoque_compras WHERE itemId = ? ORDER BY data_compra DESC';
             const compras = await window.api.all(sql, [itemId]);
             
@@ -2755,7 +2664,6 @@ class SistemaClinica {
     async imprimirContrato(tratamentoId) {
         console.log(`Iniciando impressão para tratamento ID: ${tratamentoId}`);
         
-        // CORREÇÃO AQUI
         const sql = `
             SELECT 
                 t.data, /* <-- ADICIONE ESTA LINHA */
@@ -2774,7 +2682,6 @@ class SistemaClinica {
             if (resultados && resultados.length > 0) {
                 const dadosContrato = resultados[0];
                 
-                // Agora 'dadosContrato' também contém o campo 'data'
                 const resultadoImpressao = await window.api.printContrato(dadosContrato);
                 
                 if (resultadoImpressao.success) {
@@ -2788,23 +2695,17 @@ class SistemaClinica {
         }
     }
 
-    /**
-     * Busca dados e chama o main process para imprimir a ANAMNESE
-     */
     async imprimirAnamnese() {
-        // Pega o ID do paciente do formulário de anamnese
-        // (Vou supor que você tem um input 'anamnese-paciente-id' no seu modal)
+
         const pacienteId = document.getElementById('anamnese-paciente-id').value; 
         
         if (!pacienteId) {
             console.error('ID do Paciente não encontrado no modal de anamnese.');
-            // (Adicione um alerta para o usuário se quiser)
             return;
         }
 
         console.log(`Iniciando impressão da anamnese para Paciente ID: ${pacienteId}`);
         
-        // SQL para buscar TUDO do paciente e da anamnese
         const sql = `
             SELECT * FROM pacientes p
             LEFT JOIN anamnese a ON p.id = a.pacienteId
@@ -2817,7 +2718,6 @@ class SistemaClinica {
             if (resultados && resultados.length > 0) {
                 const dados = resultados[0];
                 
-                // Envia o objeto 'dados' inteiro para o main.js (via preload)
                 const resultadoImpressao = await window.api.printAnamnese(dados);
                 
                 if (resultadoImpressao.success) {
@@ -2831,30 +2731,11 @@ class SistemaClinica {
         }
     }
 
-    // --- INÍCIO: MÉTODOS DE PAGAMENTO ---
-
-    /**
-     * Salva um novo pagamento no banco de dados
-     */
     async salvarPagamento() {
         const tratamentoId = document.getElementById('pagamento-tratamento-id').value;
         const data = document.getElementById('pagamento-data').value;
         const valorPago = document.getElementById('pagamento-valor').value;
         const formaPagamento = document.getElementById('pagamento-forma').value;
-
-        // --- DEBUG LOGS ---
-        console.log('--- Tentando Salvar Pagamento ---');
-        console.log('ID do Tratamento:', tratamentoId);
-        console.log('Data:', data);
-        console.log('Valor Pago:', valorPago);
-        console.log('Forma de Pagamento:', formaPagamento);
-        // --- FIM DEBUG LOGS ---
-
-        // Validação
-        //if (!tratamentoId || !data || !valorPago || !formaPagamento) {
-           // console.error('ERRO DE VALIDAÇÃO: Um dos campos acima está vazio.');
-           // return;
-        //}
 
         const sqlPagamento = `
             INSERT INTO pagamentos (tratamentoId, data, valor_pago, forma_pagamento)
@@ -2864,7 +2745,6 @@ class SistemaClinica {
         try {
             await window.api.run(sqlPagamento, [tratamentoId, data, valorPago, formaPagamento]);
 
-            // (O resto da lógica para atualizar o status...)
             const sumResult = await window.api.all(
                 'SELECT SUM(valor_pago) AS totalPago FROM pagamentos WHERE tratamentoId = ?', 
                 [tratamentoId]
@@ -2948,7 +2828,6 @@ class SistemaClinica {
     }
 
     async excluirPagamento(id) {
-        // Esta é a lógica de exclusão que queremos executar
         const exclusaoCallback = async () => {
             try {
                 const pag = await window.api.all('SELECT tratamentoId FROM pagamentos WHERE id = ?', [id]);
@@ -2991,19 +2870,18 @@ class SistemaClinica {
 
         this.abrirModalConfirmacao(
             'Tem certeza que deseja excluir este pagamento?\n\nEsta ação não pode ser desfeita.',
-            exclusaoCallback // Passa a função
+            exclusaoCallback 
         );
     }
 
     async abrirModalConsulta() {
         try {
-            // 1. Limpa o formulário e o ID
             document.getElementById('form-consulta').reset();
             document.getElementById('consulta-id').value = '';
             document.getElementById('titulo-modal-consulta').textContent = 'Agendar Nova Consulta';
 
             const selectPacientes = document.getElementById('consulta-paciente');
-            selectPacientes.innerHTML = '<option value="">Selecione um paciente...</option>'; // Limpa opções antigas
+            selectPacientes.innerHTML = '<option value="">Selecione um paciente...</option>'; 
 
             const pacientes = await window.api.all('SELECT id, nome FROM pacientes ORDER BY nome ASC', []);
             
@@ -3016,12 +2894,10 @@ class SistemaClinica {
 
             const today = new Date().toISOString().split('T')[0];
             document.getElementById('consulta-data').value = today;
-
             document.getElementById('modal-consulta').style.display = 'flex';
 
         } catch (err) {
             console.error('Erro ao abrir modal de consulta:', err.message);
-
         }
     }
 
@@ -3029,9 +2905,6 @@ class SistemaClinica {
         document.getElementById('modal-consulta').style.display = 'none';
     }
 
-    // ===============================================
-    // GERENCIAMENTO DE CONSULTAS (Tudo Async)
-    // ===============================================
     async saveConsulta() {
             const id = document.getElementById('consulta-id').value;
             const consulta = {
@@ -3049,11 +2922,10 @@ class SistemaClinica {
                 return;
             }
 
-            let message = ''; // Variável para a mensagem
+            let message = ''; 
 
             try {
                 if (id) {
-                    // UPDATE (Editar)
                     const sql = `
                         UPDATE consultas SET 
                         pacienteId = ?, data = ?, hora = ?, tipo = ?, 
@@ -3065,9 +2937,8 @@ class SistemaClinica {
                         consulta.status, consulta.duracao, consulta.observacoes, id
                     ];
                     await window.api.run(sql, params);
-                    message = 'Consulta atualizada com sucesso!'; // Define a mensagem
+                    message = 'Consulta atualizada com sucesso!'; 
                 } else {
-                    // INSERT (Novo)
                     const sql = `
                         INSERT INTO consultas (id, pacienteId, data, hora, tipo, status, duracao, observacoes)
                         VALUES (?, ?, ?, ?, ?, ?, ?, ?)
@@ -3078,7 +2949,7 @@ class SistemaClinica {
                         consulta.status, consulta.duracao, consulta.observacoes
                     ];
                     await window.api.run(sql, params);
-                    message = 'Consulta salva com sucesso!'; // Define a mensagem
+                    message = 'Consulta salva com sucesso!';
                 }
 
                 await this.loadConsultas();
@@ -3096,7 +2967,6 @@ class SistemaClinica {
     async loadConsultas() {
         const tbody = document.getElementById('consultas-tbody');
         try {
-            // Usamos JOIN para buscar o nome do paciente
             const sql = `
                 SELECT c.id, c.data, c.hora, c.tipo, c.status, c.observacoes, p.nome as pacienteNome 
                 FROM consultas c
@@ -3167,18 +3037,16 @@ class SistemaClinica {
 
         const exclusaoCallback = async () => {
             try {
-                // Apaga a consulta
                 await window.api.run('DELETE FROM consultas WHERE id = ?', [id]);
                 
                 console.log('Consulta excluída com sucesso.');
                 
-                this.loadConsultas(); // Recarrega a lista de consultas
-                this.generateCalendar(); // Atualiza o calendário
-                this.updateDashboard(); // Atualiza os contadores
+                this.loadConsultas(); 
+                this.generateCalendar(); 
+                this.updateDashboard(); 
                 
             } catch (err) {
                 console.error('Erro ao excluir consulta:', err.message);
-                // this.showMessage('Erro ao excluir consulta: ' + err.message, 'error');
             }
         };
 
@@ -3188,30 +3056,21 @@ class SistemaClinica {
         );
     }
 
-    // ===============================================
-    // DASHBOARD, AGENDA E FUNÇÕES AUXILIARES
-    // ===============================================
-
     async updateDashboard() {
         try {
-            // Contar pacientes
             const [pacienteData] = await window.api.all('SELECT COUNT(*) as total FROM pacientes');
             document.getElementById('total-pacientes').textContent = pacienteData.total || 0;
 
-            // Contar consultas hoje
             const today = new Date().toISOString().split('T')[0];
             const [consultasHojeData] = await window.api.all('SELECT COUNT(*) as total FROM consultas WHERE data = ?', [today]);
             document.getElementById('consultas-hoje').textContent = consultasHojeData.total || 0;
             
-            // Contar consultas pendentes
             const [consultasPendentesData] = await window.api.all("SELECT COUNT(*) as total FROM consultas WHERE status = 'agendada'");
             document.getElementById('consultas-pendentes').textContent = consultasPendentesData.total || 0;
-            
-            // Total de consultas
+
             const [consultasTotalData] = await window.api.all('SELECT COUNT(*) as total FROM consultas');
             document.getElementById('total-consultas').textContent = consultasTotalData.total || 0;
             
-            // Carrega a tabela de "Próximas Consultas"
             await this.loadProximasConsultas();
 
         } catch (err) {
@@ -3265,14 +3124,12 @@ class SistemaClinica {
         const primeiroDia = new Date(this.currentYear, this.currentMonth, 1).getDay();
         const diasNoMes = new Date(this.currentYear, this.currentMonth + 1, 0).getDate();
         
-        // Busca todas as consultas do mês de uma vez
         const inicioMes = `${this.currentYear}-${String(this.currentMonth + 1).padStart(2, '0')}-01`;
         const fimMes = `${this.currentYear}-${String(this.currentMonth + 1).padStart(2, '0')}-${String(diasNoMes).padStart(2, '0')}`;
         
         const sql = `SELECT data, COUNT(*) as total FROM consultas WHERE data BETWEEN ? AND ? GROUP BY data`;
         const consultasDoMes = await window.api.all(sql, [inicioMes, fimMes]);
         
-        // Mapeia para busca rápida
         const consultasMap = new Map();
         consultasDoMes.forEach(c => {
             consultasMap.set(c.data, c.total);
@@ -3280,12 +3137,10 @@ class SistemaClinica {
         
         const hojeISO = new Date().toISOString().split('T')[0];
 
-        // Cria os dias em branco
         for (let i = 0; i < primeiroDia; i++) {
             calendarGrid.innerHTML += `<div class="calendar-day empty"></div>`;
         }
         
-        // Cria os dias do mês
         for (let dia = 1; dia <= diasNoMes; dia++) {
             const dataISO = `${this.currentYear}-${String(this.currentMonth + 1).padStart(2, '0')}-${String(dia).padStart(2, '0')}`;
             
@@ -3375,12 +3230,10 @@ class SistemaClinica {
     }
 
     async abrirModalViewItem(itemId) {
-        // Função helper para evitar "null"
         const get = (key) => (key || '---'); 
         const formatBRL = (val) => new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(val);
 
         try {
-            // 1. Buscar os dados principais do item
             const itemSql = 'SELECT * FROM estoque WHERE id = ?';
             const itemResult = await window.api.all(itemSql, [itemId]);
             if (!itemResult || itemResult.length === 0) {
@@ -3389,7 +3242,6 @@ class SistemaClinica {
             }
             const item = itemResult[0];
 
-            // 2. Preencher os dados
             document.getElementById('view-item-nome').textContent = `Prontuário de: ${get(item.nome)}`;
             document.getElementById('view-item-nome-completo').textContent = get(item.nome);
             document.getElementById('view-item-categoria').textContent = get(item.categoria);
@@ -3402,9 +3254,8 @@ class SistemaClinica {
             
             document.getElementById('view-item-notas').textContent = get(item.notas);
 
-            // 3. Buscar e preencher o Histórico de Compras
             const tbody = document.getElementById('view-historico-tbody');
-            tbody.innerHTML = ''; // Limpa a tabela
+            tbody.innerHTML = '';
             
             const sqlCompras = 'SELECT * FROM estoque_compras WHERE itemId = ? ORDER BY data_compra DESC LIMIT 10';
             const compras = await window.api.all(sqlCompras, [itemId]);
@@ -3425,7 +3276,6 @@ class SistemaClinica {
                 tbody.innerHTML = '<tr><td colspan="3" style="text-align: center; color: #ccc;">Nenhum histórico de compra.</td></tr>';
             }
 
-            // 4. Abrir o modal
             document.getElementById('modal-item-view').style.display = 'flex';
 
         } catch (err) {
@@ -3434,7 +3284,6 @@ class SistemaClinica {
         }
     }
 
-    // --- INÍCIO: MÉTODOS DE RELATÓRIO (VERSÃO COMPLETA) ---
     async gerarRelatorio() {
         const periodo = document.getElementById('report-periodo').value;
         const tipoRelatorio = document.getElementById('report-tipo').value;
@@ -3445,7 +3294,6 @@ class SistemaClinica {
         resultsArea.innerHTML = `<h5>Gerando relatório...</h5>`;
 
         try {
-            // Usa um 'switch' para chamar a função correta
             switch (tipoRelatorio) {
                 case 'financeiro':
                     await this.gerarRelatorioFinanceiro(inicio, fim, nomePeriodo, resultsArea);
@@ -3466,7 +3314,6 @@ class SistemaClinica {
     }
 
     async gerarRelatorioFinanceiro(inicio, fim, nomePeriodo, resultsArea) {
-        // Consulta 1: Total de TRATAMENTOS criados no período
         const sqlTratamentos = `
             SELECT SUM(valor_total) as total_contratado 
             FROM tratamentos 
@@ -3475,7 +3322,6 @@ class SistemaClinica {
         const resTratamentos = await window.api.all(sqlTratamentos, [inicio, fim]);
         const totalContratado = resTratamentos[0]?.total_contratado || 0;
 
-        // Consulta 2: Total de PAGAMENTOS recebidos no período, agrupados por forma
         const sqlPagamentos = `
             SELECT SUM(valor_pago) as total_recebido, forma_pagamento 
             FROM pagamentos 
@@ -3515,10 +3361,8 @@ class SistemaClinica {
     }
 
     async gerarRelatorioPacientes(inicio, fim, nomePeriodo, resultsArea) {
-        // (O seu código antigo não tinha dataCadastro, então vamos checar se a coluna existe)
         let novosPacientes = 0;
         try {
-            // Tenta buscar por data de cadastro (se a coluna existir)
             const sqlNovos = `SELECT COUNT(*) as novos FROM pacientes WHERE dataCadastro BETWEEN ? AND ?`;
             const resNovos = await window.api.all(sqlNovos, [inicio, fim]);
             novosPacientes = resNovos[0]?.novos || 0;
@@ -3544,7 +3388,6 @@ class SistemaClinica {
     }
 
     async gerarRelatorioConsultas(inicio, fim, nomePeriodo, resultsArea) {
-        // A consulta SQL está correta
         const sqlStatus = `
             SELECT status, COUNT(*) as total 
             FROM consultas 
@@ -3560,7 +3403,6 @@ class SistemaClinica {
         };
         
         let totalConsultas = 0;
-        // Agora usamos os status em minúsculo para bater com o banco de dados
         resStatus.forEach(r => {
             totalConsultas += r.total;
             
@@ -3570,7 +3412,6 @@ class SistemaClinica {
                     stats.pendente += r.total;
                     break;
                 
-                // (Assumindo que o status 'realizada' também será em minúsculo)
                 case 'realizada':
                     stats.realizada += r.total;
                     break;
@@ -3580,7 +3421,6 @@ class SistemaClinica {
             }
         });
 
-        // O HTML de resultado não muda
         let htmlResultado = `
             <h5>Relatório de Consultas - ${nomePeriodo}</h5>
             <p>Período de ${inicio.split('-').reverse().join('/')} até ${fim.split('-').reverse().join('/')}</p>
@@ -3600,8 +3440,8 @@ class SistemaClinica {
     getDatesFromPeriod(periodo) {
         const hoje = new Date();
         const hojeFim = new Date();
-        hoje.setHours(0, 0, 0, 0); // Início do dia
-        hojeFim.setHours(23, 59, 59, 999); // Fim do dia
+        hoje.setHours(0, 0, 0, 0); 
+        hojeFim.setHours(23, 59, 59, 999); 
 
         let inicio = new Date(hoje);
         let fim = new Date(hojeFim);
@@ -3611,7 +3451,7 @@ class SistemaClinica {
             case 'hoje':
                 break;
             case 'semana':
-                const diaSemana = hoje.getDay(); // 0 (Dom) - 6 (Sáb)
+                const diaSemana = hoje.getDay(); 
                 inicio.setDate(hoje.getDate() - diaSemana);
                 fim.setDate(hoje.getDate() + (6 - diaSemana));
                 fim.setHours(23, 59, 59, 999);
@@ -3636,15 +3476,11 @@ class SistemaClinica {
         return { inicio: formatSQL(inicio), fim: formatSQL(fim), nomePeriodo };
     }
 
-    // --- FIM: MÉTODOS DE RELATÓRIO ---
-
     async abrirModalAnamnese(pacienteId) {
-            // 1. Limpa o formulário antes de preencher
             document.getElementById('form-anamnese').reset();
             document.getElementById('anamnese-paciente-id').value = pacienteId;
 
             try {
-                // 2. Busca os dados do PACIENTE (para os campos de cima)
                 const [paciente] = await window.api.all('SELECT * FROM pacientes WHERE id = ?', [pacienteId]);
                 if (paciente) {
                     document.getElementById('anamnese-nome').value = paciente.nome || '';
@@ -3652,22 +3488,17 @@ class SistemaClinica {
                     document.getElementById('anamnese-nascimento').value = paciente.nascimento ? new Date(paciente.nascimento).toLocaleDateString('pt-BR', { timeZone: 'UTC' }) : '';
                     document.getElementById('anamnese-fone').value = paciente.telefone || '';
                     document.getElementById('anamnese-email').value = paciente.email || '';
-                    // Preenche campos que podem ser editados (se estiverem vazios)
                     document.getElementById('anamnese-endereco').value = paciente.endereco || '';
                 }
 
-                // 3. Busca a ANAMNESE (se já existir)
                 const [anamnese] = await window.api.all('SELECT * FROM anamnese WHERE pacienteId = ?', [pacienteId]);
                 
                 if (anamnese) {
-                    // Preenche os dados de contato (se existirem na anamnese)
-                    document.getElementById('anamnese-endereco').value = anamnese.endereco || paciente.endereco; // Prioriza o da anamnese
+                    document.getElementById('anamnese-endereco').value = anamnese.endereco || paciente.endereco; 
                     document.getElementById('anamnese-cep').value = anamnese.cep || '';
                     document.getElementById('anamnese-fone-emergencia').value = anamnese.fone_emergencia || '';
                     document.getElementById('anamnese-falar-com').value = anamnese.falar_com || '';
-                    document.getElementById('anamnese-email').value = anamnese.email || paciente.email; // Prioriza o da anamnese
-
-                    // Preenche os checkboxes (1 = true, 0 = false)
+                    document.getElementById('anamnese-email').value = anamnese.email || paciente.email; 
                     document.getElementById('anamnese-tratamento-medico').checked = !!anamnese.tratamento_medico;
                     document.getElementById('anamnese-tratamento-medico-qual').value = anamnese.tratamento_medico_qual || '';
                     document.getElementById('anamnese-tomando-medicamento').checked = !!anamnese.tomando_medicamento;
@@ -3694,7 +3525,6 @@ class SistemaClinica {
                     document.getElementById('anamnese-odontograma-anotacoes').value = anamnese.odontograma_anotacoes || '';
                 }
 
-                // 4. Abre o modal
                 this.abrirModal('modal-anamnese');
 
             } catch (err) {
@@ -3709,10 +3539,8 @@ class SistemaClinica {
                 this.showMessage('ID do paciente não encontrado.', 'error');
                 return;
             }
-            // 1. Coleta todos os dados do formulário
             const dados = {
                 pacienteId: pacienteId,
-                // Converte os checkboxes para 1 (se marcado) ou 0 (se desmarcado)
                 tratamento_medico: document.getElementById('anamnese-tratamento-medico').checked ? 1 : 0,
                 tratamento_medico_qual: document.getElementById('anamnese-tratamento-medico-qual').value,
                 tomando_medicamento: document.getElementById('anamnese-tomando-medicamento').checked ? 1 : 0,
@@ -3785,10 +3613,7 @@ class SistemaClinica {
             }
         }
 
-        // --- Funções para o Modal de Zoom ---
             abrirModalZoom(urlDaImagem) {
-                // Pega o caminho completo (se já não for um)
-                // Isso é um truque para garantir que o Electron encontre a imagem
                 const img = new Image();
                 img.src = urlDaImagem; 
 
@@ -3866,9 +3691,7 @@ class SistemaClinica {
     }
 
     showMessage(message, type = 'success') {
-        // A 'error' não estava sendo usada, mas é bom ter
         console.log(`Mensagem: ${message} (Tipo: ${type})`);
-        //alert(message);
     }
 }
 
@@ -3897,18 +3720,7 @@ class SistemaClinica {
         }
         
 
-        // Initialize system
         const sistema = new SistemaClinica();
-
-        // Close modal when clicking outside
-        /* --- DESATIVADO PARA NÃO PERDER DADOS ---
-        window.addEventListener('click', (e) => {
-            if (e.target.classList.contains('modal')) {
-                e.target.style.display = 'none';
-            }
-        });
-        */
-
         
     </script>
 </body>
