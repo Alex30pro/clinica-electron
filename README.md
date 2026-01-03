@@ -18,7 +18,7 @@ Este projeto utiliza Node.js. Para testar em sua máquina:
 
 ```bash
 # 1. Clone o repositório
-git clone [https://github.com/Alex30pro/clinica-electron.git](https://github.com/Alex30pro/clinica-electron.git)
+git clone https://github.com/Alex30pro/clinica-electron.git
 
 # 2. Instale as dependências
 npm install
