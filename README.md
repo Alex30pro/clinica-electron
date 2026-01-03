@@ -32,3 +32,5 @@ Core: Electron.js (Main & Renderer Processes).
 Interface: HTML5, CSS3, JavaScript Vanilla.
 
 Persistência: JSON / LocalStorage (Foco em simplicidade e portabilidade).
+
+Projeto desenvolvido para fins de estudo em Desenvolvimento Desktop e Segurança de Dados Locais.
