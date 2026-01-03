@@ -25,3 +25,10 @@ npm install
 
 # 3. Inicie a aplicação
 npm start
+
+🛠️ Tecnologias Utilizadas
+Core: Electron.js (Main & Renderer Processes).
+
+Interface: HTML5, CSS3, JavaScript Vanilla.
+
+Persistência: JSON / LocalStorage (Foco em simplicidade e portabilidade).
