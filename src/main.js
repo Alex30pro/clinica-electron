@@ -24,7 +24,7 @@ function createWindow() {
     mainWindow.on('maximize', () => mainWindow.webContents.send('window-maximized', true));
     mainWindow.on('unmaximize', () => mainWindow.webContents.send('window-maximized', false));
 
-    mainWindow.loadFile('index.html');
+    mainWindow.loadFile('src/index.html');
 }
 
 function initDatabase() {
@@ -187,7 +187,7 @@ function initDatabase() {
 
         ipcMain.handle('load-main-window', () => {
             const win = BrowserWindow.getFocusedWindow();
-            if (win) win.loadFile('sistema-clinica.html');
+            if (win) win.loadFile('src/sistema-clinica.html');
         });
 
         ipcMain.handle('window-minimize', () => {
@@ -429,7 +429,7 @@ function initDatabase() {
                         return data;
                     };
 
-                    const imagePath = path.join(__dirname, 'odontograma.jpg');
+                    const imagePath = path.join(__dirname, 'assets/odontograma.jpg');
                     let imageDataUrl;
                     try {
                         const imageBuffer = fs.readFileSync(imagePath);

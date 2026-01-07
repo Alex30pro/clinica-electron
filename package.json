@@ -2,7 +2,7 @@
   "name": "clinica-electron",
   "version": "1.0.0",
   "description": "Sistema de Gerenciamento de Clínica",
-  "main": "main.js",
+  "main": "src/main.js",
   "author": "Alex Araujo",
   "scripts": {
     "start": "electron .",
@@ -20,7 +20,7 @@
     "productName": "Sistema de Clínica",
     "win": {
       "target": "nsis",
-      "icon": "icon.ico"
+      "icon": "assets/icon.ico"
     },
     "nsis": {
       "oneClick": false,
